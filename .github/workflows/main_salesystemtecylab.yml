@@ -52,3 +52,10 @@ jobs:
           package: '*.jar'
 
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_25D1E0386243414A8D798138B1EAC4A5 }}
+
+      - name: Configure startup command
+        uses: azure/appservice-settings@v1
+        with:
+          app-name: 'SaleSystemTecyLab'
+          startup-command: 'java -jar app.jar'
+
